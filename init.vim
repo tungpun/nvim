@@ -38,6 +38,16 @@ Plug 'Chiel92/vim-autoformat'
 call plug#end()
 
 
+" UI Configuration
+"
+set background=dark
+let g:quantum_italics=1
+colorscheme quantum
+
+syntax on
+syntax enable
+
+
 set nu
 set nowb
 set nowb
@@ -69,11 +79,6 @@ endif
 if has("gui_running")
   set guicursor=n-v-c-sm:block,i-ci-ve:block,r-cr-o:blocks
 endif
-
-" Configurations Part
-" UI configuration
-syntax on
-syntax enable
 
 
 " Tab things

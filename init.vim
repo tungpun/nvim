@@ -91,17 +91,17 @@ nnoremap <Leader>w :w<CR>
 nnoremap <Leader>l :vsplit<CR>
 nnoremap <Leader>k :split<CR>
 nnoremap <Leader>wh :wincmd h<CR>
-nnoremap <Leader>wl :wincmd l<CR>
-nnoremap <Leader>wk :wincmd k<CR>
-nnoremap <Leader>wj :wincmd j<CR>
-nnoremap <Leader>w= :wincmd =<CR>
-nnoremap <Leader>e :QuickRunExecute<CR>
-nnoremap <Leader>wb :e#<CR>
-nnoremap <Leader>qq :bd<CR>
-nnoremap <Leader>ss :mksession! .work<CR>
-nnoremap <Leader>sr :so .work<CR>
-nnoremap <Leader><Leader>r :so ~/.config/nvim/init.vim<CR>
-nnoremap <Leader>n :NERDTree<CR>
+nnoremap <leader>wl :wincmd l<cr>
+nnoremap <leader>wk :wincmd k<cr>
+nnoremap <leader>wj :wincmd j<cr>
+nnoremap <leader>w= :wincmd =<cr>
+nnoremap <leader>e :quickrunexecute<cr>
+nnoremap <leader>wb :e#<cr>
+nnoremap <leader>qq :bd<cr>
+nnoremap <leader>ss :mksession! .work<cr>
+nnoremap <leader>sr :so .work<cr>
+nnoremap <leader><leader>r :so ~/.config/nvim/init.vim<cr>
+nnoremap <leader>n :nerdtree<cr>
 nnoremap <Leader>f :NERDTreeFind<CR>
 nnoremap <Leader><Leader>o :Vista coc<CR>
 "Buffer
@@ -119,3 +119,20 @@ nnoremap <Leader>b :CocList outline<CR>
 
 " Use auocmd to force lightline update.
 autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()
+
+
+"Copy things
+set clipboard+=unnamedplus
+
+" Use tab for trigger completion with characters ahead and navigate.
+" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction

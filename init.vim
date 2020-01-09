@@ -64,7 +64,7 @@ set backupskip=/tmp/*,$TMPDIR/*,$TMP/*,$TEMP/*
 set directory=/tmp
 set pastetoggle=<F3>
 set encoding=UTF-8
-set mouse=a " enable mouse for all mode
+" set mouse=a " set to enable mouse for all mode
 set cursorline
 
 autocmd StdinReadPre * let s:std_in=1

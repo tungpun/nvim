@@ -47,9 +47,9 @@ colorscheme quantum
 syntax on
 syntax enable
 
-set listchars=tab:>·,trail:~,extends:>,precedes:<,space:·
-set list
-
+" set listchars=tab:>·,trail:~,extends:>,precedes:<,space:·
+" set list
+" disable because can't copy content
 
 set nu
 set nowb
